@@ -29,18 +29,18 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.knetapp.api.nfeApiConfig;
-import com.knetapp.documentofiscal.DFAmbiente;
-import com.knetapp.documentofiscal.DFModelo;
-import com.knetapp.documentofiscal.DFUnidadeFederativa;
-import com.knetapp.documentofiscal.nfe.NFeConfig;
-import com.knetapp.documentofiscal.nfe400.classes.lote.envio.NFLoteEnvio;
-import com.knetapp.documentofiscal.nfe400.classes.lote.envio.NFLoteEnvioRetornoDados;
-import com.knetapp.documentofiscal.nfe400.classes.lote.envio.NFLoteIndicadorProcessamento;
-import com.knetapp.documentofiscal.nfe400.classes.nota.NFNota;
-import com.knetapp.documentofiscal.nfe400.classes.nota.consulta.NFNotaConsultaRetorno;
-import com.knetapp.documentofiscal.nfe400.webservices.WSFacade;
-import com.knetapp.documentofiscal.utils.DFPersister;
-import com.knetapp.documentofiscal.validadores.StringValidador;
+import com.fincatto.documentofiscal.DFAmbiente;
+import com.fincatto.documentofiscal.DFModelo;
+import com.fincatto.documentofiscal.DFUnidadeFederativa;
+import com.fincatto.documentofiscal.nfe.NFeConfig;
+import com.fincatto.documentofiscal.nfe400.classes.lote.envio.NFLoteEnvio;
+import com.fincatto.documentofiscal.nfe400.classes.lote.envio.NFLoteEnvioRetornoDados;
+import com.fincatto.documentofiscal.nfe400.classes.lote.envio.NFLoteIndicadorProcessamento;
+import com.fincatto.documentofiscal.nfe400.classes.nota.NFNota;
+import com.fincatto.documentofiscal.nfe400.classes.nota.consulta.NFNotaConsultaRetorno;
+import com.fincatto.documentofiscal.nfe400.webservices.WSFacade;
+import com.fincatto.documentofiscal.utils.DFPersister;
+import com.fincatto.documentofiscal.validadores.StringValidador;
 
 @WebService(endpointInterface = "com.knetapp.service.nfeServiceServerImpl")
 public class nfeServiceServerImpl implements nfeServiceInterfaceWeb {

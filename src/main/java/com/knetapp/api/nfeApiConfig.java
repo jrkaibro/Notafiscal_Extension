@@ -7,9 +7,9 @@ import java.security.KeyStore;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
 
-import com.knetapp.documentofiscal.DFAmbiente;
-import com.knetapp.documentofiscal.DFUnidadeFederativa;
-import com.knetapp.documentofiscal.nfe.NFeConfig;
+import com.fincatto.documentofiscal.DFAmbiente;
+import com.fincatto.documentofiscal.DFUnidadeFederativa;
+import com.fincatto.documentofiscal.nfe.NFeConfig;
 
 // Exemplo de configuracao para acesso aos serviços da Sefaz.
 public class nfeApiConfig extends NFeConfig {

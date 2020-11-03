@@ -10,7 +10,7 @@
 
   <name>NotaFiscal</name>
   <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+  <url>http://www.knetapp.com.br</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -24,14 +24,17 @@
     <version.jre.launch4j>1.7.0</version.jre.launch4j>
     <launch4jVersion>1.0.0.0</launch4jVersion>
     <exeFileName>NotaFiscal-1.0.0-SNAPSHOT.exe</exeFileName>
+    <latest.release>3.0.24</latest.release>
   </properties>
 
+  <!--
   <repositories>
     <repository>
       <id>local-maven-repo</id>
       <url>file:///D:\Projects\API\nfe\target</url>
     </repository>
   </repositories>
+  -->
 
   <!-- Dependencias Libs -->
   <dependencies>
@@ -43,10 +46,19 @@
     </dependency>
 
     <dependency>
+      <groupId>com.github.wmixvideo</groupId>
+      <artifactId>nfe</artifactId>
+      <version>${latest.release}</version>
+    </dependency>
+
+
+    <!--
+    <dependency>
       <groupId>com.knetapp</groupId>
       <artifactId>nfe</artifactId>
       <version>3.0.13-SNAPSHOT</version>
     </dependency>
+    -->
 
     <dependency>
       <groupId>junit</groupId>
