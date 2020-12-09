@@ -1,26 +1,5 @@
 package com.knetapp.api;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
-import java.math.BigDecimal;
-import java.security.KeyManagementException;
-import java.security.KeyStore;
-import java.security.KeyStoreException;
-import java.security.NoSuchAlgorithmException;
-import java.security.UnrecoverableKeyException;
-import java.security.cert.Certificate;
-import java.security.cert.CertificateException;
-import java.security.cert.CertificateExpiredException;
-import java.security.cert.X509Certificate;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Enumeration;
-import java.util.List;
-
 import com.fincatto.documentofiscal.DFAmbiente;
 import com.fincatto.documentofiscal.DFModelo;
 import com.fincatto.documentofiscal.DFUnidadeFederativa;
@@ -41,9 +20,20 @@ import com.fincatto.documentofiscal.nfe400.webservices.WSFacade;
 import com.fincatto.documentofiscal.utils.DFAssinaturaDigital;
 import com.fincatto.documentofiscal.utils.DFCadeiaCertificados;
 import com.fincatto.documentofiscal.utils.DFPersister;
-import com.fincatto.documentofiscal.validadores.StringValidador;
-import com.fincatto.documentofiscal.validadores.XMLValidador;
 import org.apache.commons.io.FileUtils;
+
+import java.io.*;
+import java.math.BigDecimal;
+import java.security.*;
+import java.security.cert.Certificate;
+import java.security.cert.CertificateException;
+import java.security.cert.CertificateExpiredException;
+import java.security.cert.X509Certificate;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Enumeration;
+import java.util.List;
 
 public class nfeApi {
 
@@ -241,7 +231,7 @@ public class nfeApi {
 		
 		try {			
 			
-			valido = XMLValidador.validaNota(xml);
+			//valido = XMLValidador.validaNota(xml);
 			retorno = valido.toString();
 			
 		} catch (Exception e) {
@@ -409,8 +399,8 @@ public class nfeApi {
 			// Lote
 			NFLoteEnvio lote = new NFLoteEnvio();
 			List<NFNota> notas = new ArrayList<>();
-			
-			StringValidador.tamanho15N(LoteID, "ID do Lote");
+
+			//StringValidador.tamanho15N(LoteID, "ID do Lote");
 			
 			notas.add(notaRecuperadaAssinada);
 			lote.setNotas(notas);
@@ -579,8 +569,7 @@ public class nfeApi {
 	}
 
 	public String NfCancelar(String chaveDeAcessoDaNota, String protocoloDaNota, String motivoCancelamento) {
-		
-		
+
 		System.out.println("chave: "+ chaveDeAcessoDaNota);
 		System.out.println("protocolo: "+ protocoloDaNota);
 		System.out.println("justificativa: "+ motivoCancelamento);

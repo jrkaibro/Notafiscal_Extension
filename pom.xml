@@ -24,7 +24,7 @@
     <version.jre.launch4j>1.7.0</version.jre.launch4j>
     <launch4jVersion>1.0.0.0</launch4jVersion>
     <exeFileName>NotaFiscal-1.0.0-SNAPSHOT.exe</exeFileName>
-    <latest.release>3.0.24</latest.release>
+    <latest.release>3.0.28</latest.release>
   </properties>
 
   <!--

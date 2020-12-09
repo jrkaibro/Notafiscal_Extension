@@ -1,15 +1,15 @@
 package com.knetapp.api;
 
+import com.fincatto.documentofiscal.DFAmbiente;
+import com.fincatto.documentofiscal.DFUnidadeFederativa;
+import com.fincatto.documentofiscal.nfe.NFeConfig;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.security.KeyStore;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
-
-import com.fincatto.documentofiscal.DFAmbiente;
-import com.fincatto.documentofiscal.DFUnidadeFederativa;
-import com.fincatto.documentofiscal.nfe.NFeConfig;
 
 // Exemplo de configuracao para acesso aos serviços da Sefaz.
 public class nfeApiConfig extends NFeConfig {
@@ -47,12 +47,14 @@ public class nfeApiConfig extends NFeConfig {
     
     @Override
     public KeyStore getCertificadoKeyStore() throws KeyStoreException {
+
         if (this.keyStoreCertificado == null) {
+
             this.keyStoreCertificado = KeyStore.getInstance("PKCS12");
             
             try (InputStream certificadoStream = new FileInputStream(getCertificadoKeyStore)) {
-                this.keyStoreCertificado.load(certificadoStream, this.getCertificadoSenha().toCharArray());
 
+                this.keyStoreCertificado.load(certificadoStream, this.getCertificadoSenha().toCharArray());
                 
             } catch (NoSuchAlgorithmException | IOException e) {
                 this.keyStoreCadeia = null;
@@ -73,6 +75,7 @@ public class nfeApiConfig extends NFeConfig {
     
     @Override
     public KeyStore getCadeiaCertificadosKeyStore() throws KeyStoreException {
+
         if (this.keyStoreCadeia == null) {
             this.keyStoreCadeia = KeyStore.getInstance("JKS");
             try (InputStream cadeia = new FileInputStream(getCadeiaCertificadosKeyStore)) {
@@ -82,8 +85,8 @@ public class nfeApiConfig extends NFeConfig {
                 throw new KeyStoreException("Nao foi possivel montar o KeyStore com o certificado", e);
             } catch (java.security.cert.CertificateException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+                System.out.println("Certificate " + e.getMessage());
+            }
         }
         return this.keyStoreCadeia;
     }

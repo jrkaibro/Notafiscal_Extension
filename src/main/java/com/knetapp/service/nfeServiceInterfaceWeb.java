@@ -1,7 +1,7 @@
 package com.knetapp.service;
 
-import javax.jws.WebService;
 import javax.jws.WebMethod;
+import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
 import javax.jws.soap.SOAPBinding.Style;
  
@@ -15,8 +15,8 @@ public interface nfeServiceInterfaceWeb {
   @WebMethod String validarnf(String parm);       	    // Validar Notafiscal de Service 
   @WebMethod String upgrade(String parm);        		// Atualizar Aplicacao no Cliente   
   @WebMethod String inutilizar(String parm);     		// Inutilizacao da Nota  
-  @WebMethod String cartacorrecao(String parm);  		// Carta de Correcaoo
+  @WebMethod String cartacorrecao(String parm);  		// Carta de Correcao
   @WebMethod String manifestar(String parm);     		// Manifestacao do Destinatario
-  
-  
+  @WebMethod String protocolar(String parm);     		// Protocolar XML já enviado
+
 }

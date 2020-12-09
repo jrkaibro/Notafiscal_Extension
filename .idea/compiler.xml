@@ -9,5 +9,8 @@
         <module name="NotaFiscal" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="NotaFiscal (1)" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
